@@ -1,0 +1,16 @@
+{% extends "tasks/base.html" %}
+{% block content %}
+    <h2>{{ task.title }}</h2>
+    <p><strong>Description:</strong><br> {{ task.description }}</p>
+    <p><strong>Status:</strong> {{ task.status }}</p>
+    <p><strong>Priority:</strong> {{ task.priority }}</p>
+    <p><strong>Due Date:</strong> {{ task.due_date }}</p>
+    <p><strong>Created At:</strong> {{ task.created_at }}</p>
+    <p><strong>Updated At:</strong> {{ task.updated_at }}</p>
+    
+    <br>
+    <a href="{% url 'task-update' task.id %}"><button>Edit Task</button></a>
+    <a href="{% url 'task-delete' task.id %}"><button style="color: red;">Delete Task</button></a>
+    <br><br>
+    <a href="{% url 'task-list' %}">← Back to Tasks</a>
+{% endblock %}
